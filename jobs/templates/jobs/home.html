@@ -2,13 +2,15 @@
 
 <!doctype html>
 <html lang="en">
+
 <head>
+  {% load staticfiles %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+
   <meta name="generator" content="Jekyll v3.8.6">
-  <title>Album example · Bootstrap</title>
+  <title>Saurabh Kumar</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
@@ -78,7 +80,7 @@
   <header>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Saurabh Kumar</a>
+      <a class="navbar-brand" href=" {% url 'home' %}">Saurabh Kumar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -86,14 +88,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item ">
-            <a class="nav-link" href="#">Twitter </a>
+            <a class="nav-link" href="http://www.twitter.com">Twitter </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Resume</a>
+            <a class="nav-link" href="{% static 'SaurabhKumar.pdf' %}">Resume</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
           </li>
 
 
@@ -114,6 +116,7 @@
           <a href="mailto:saurabh.mca.engg@gmail.com" class="btn btn-primary my-2">E-Mail Me</a>
 
         </p>
+        <img src="{% static 'saurabh.jpg' %}" height="350" width=250/>
       </div>
     </section>
 
@@ -122,18 +125,18 @@
 
         <div class="row">
 
-            {% for job in jobs.all %}
+          {% for job in jobs.all %}
 
           <div class="col-md-4">
             <div class="card mb-4  shadow-sm">
-              <img class = " card-img-top"src="{{ job.image.url }}" />
+              <img class = " rounded-circle " alt="Responsive image" src="{{ job.image.url }}" height = 200 />
               <div class="card-body">
                 <p class="card-text">{{ job.summary }}</p>
               </div>
             </div>
           </div>
 
-            {% endfor %}
+          {% endfor %}
 
         </div>
       </div>
@@ -146,7 +149,7 @@
       <p class="float-right">
         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
       </p>
-      <p>CopyRight Saurabh    {% now "Y" %}</p>
+      <p class="text-center">CopyRight Saurabh    {% now "Y" %}</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
